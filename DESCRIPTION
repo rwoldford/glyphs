@@ -1,10 +1,10 @@
 Package: glyphs
 Type: Package
-Title: Make glyphs using pixel-oriented data visualization technique
+Title: Glyphs for multivariate information
 Version: 0.1.0
 Author: Jiahua Liu, Wayne Oldford
 Maintainer: Wayne Oldford <rwoldford@uwaterloo.ca>
-Description: Make glyphs using pixel-oriented data visualization technique. The package can map data values to pixel colors and order them in a plane in a specific way such as Hilbert curve to get a glyph for each dimension of the data sets. Then, one can plot them in the device. Besides, the mapping from data values to colors has a default function and also for the plot function, but one can have his own function for it. The core of the package is to make a list of glyphs given a multidimensional data set.
+Description: Make glyphs using pixel-oriented data visualization technique. The package can map data values to pixel colors and order them in a plane in a specific way such as Hilbert curve  to get a glyph for each dimension of the data sets. Then, one can plot them in the device.  Besides, the mapping from data values to colors has a default function and also for the plot function,  but one can have his own function for it.  The core of the package is to make a list of glyphs given a multidimensional data set.
 Licensce: GPL
 Encoding: UTF-8
 LazyData: true
