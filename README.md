@@ -1,4 +1,4 @@
-# glyphs
+# glyphs for multivariate information
 
 An R package for creating glyphs for use in visualization by Jack (Jiahua) Liu and Wayne Oldford
 
