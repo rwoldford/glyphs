@@ -1,7 +1,7 @@
 library(png)
 library(jpeg)
 library(tiff)
-library(rtiff)
+#library(rtiff)
 
 ##' @title  Make glyphs in different classes
 ##' @description Given a list of data vectors, make a corresponding list of glyphs in one of four different classes which are "png", "jpeg", "pixmap" and "tiff".
@@ -29,7 +29,7 @@ library(rtiff)
 # use small margins as in par(mar=rep(0.5, 4))
 #
 make_glyphs_draw <- function (data, draw_fun,
-                              type = c("png", "jpeg", "pixmap", "tiff" #, "bmp"
+                              type = c("png", "jpeg", "pixmap" , "tiff" #, "bmp"
                                        ),
                               width = 50, height = 50, mar=rep(1, 4), ...) {
   tmp <- tempdir()

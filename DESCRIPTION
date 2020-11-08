@@ -13,7 +13,6 @@ Imports:
     grid,
     jpeg,
     tiff,
-    rtiff,
     pixmap
 Suggests:
     dplyr,
