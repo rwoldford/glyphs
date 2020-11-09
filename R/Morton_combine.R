@@ -1,23 +1,25 @@
 library(png)
 library(pixmap)
 
-##' @title  Morton curve data visualization
-##' @description MortonGlyph generates a data matrix of png format or a class of "pixmap" which can be used to display color strings in an order of Morton curve in the space given a vector of colors
-##' @param col vector of colors
-##' @param fill logical value indicating whether the color strings repeat from the beginning if number of colors is smaller than the total length of Morton curve
-##' @param type string specifying the format of output. "png" means the output is a data matrix in the png format, and "pixmap" means the output is a class of pixmap.
-##' @return a data matrix of png format or a class of "pixmap" which can be used to plot. See \code{\link[pixmap]{pixmap}}, \code{\link[png]{writePNG}}, \code{\link[graphics]{rasterImage}}
-##' @author Jiahua Liu, Wayne Oldford
-##' @examples
-##' myPngmat <- MortonGlyph()
-##' myPngmat <- MortonGlyph(col = colors())
-##' myPngmat <- MortonGlyph(col = colors(), fill = TRUE)
-##' writePNG(myPngmat, target = "myplot.png")
-##' plot(0,type='n', xlim=c(0,1), ylim=c(0,1), axes = FALSE, xlab = "", ylab = "")
-##' rasterImage(myPngmat,0,0,1,1)
-##' mypixmap <- MortonGlyph(type = "pixmap")
-##' mypixmap <- MortonGlyph(col = colors(), fill = TRUE, type = "pixmap")
-##' plot(mypixmap)
+#' @title  Morton curve data visualization
+#' @description MortonGlyph generates a data matrix of png format or a class of "pixmap" which can be used to display color strings in an order of Morton curve in the space given a vector of colors
+#' @param col vector of colors
+#' @param fill logical value indicating whether the color strings repeat from the beginning if number of colors is smaller than the total length of Morton curve
+#' @param type string specifying the format of output. "png" means the output is a data matrix in the png format, and "pixmap" means the output is a class of pixmap.
+#' @return a data matrix of png format or a class of "pixmap" which can be used to plot. See \code{\link[pixmap]{pixmap}}, \code{\link[png]{writePNG}}, \code{\link[graphics]{rasterImage}}
+#' @author Jiahua Liu, Wayne Oldford
+#' @examples
+#' myPngmat <- MortonGlyph()
+#' myPngmat <- MortonGlyph(col = colors())
+#' myPngmat <- MortonGlyph(col = colors(), fill = TRUE)
+#' writePNG(myPngmat, target = "myplot.png")
+#' plot(0,type='n', xlim=c(0,1), ylim=c(0,1), axes = FALSE, xlab = "", ylab = "")
+#' rasterImage(myPngmat,0,0,1,1)
+#' mypixmap <- MortonGlyph(type = "pixmap")
+#' mypixmap <- MortonGlyph(col = colors(), fill = TRUE, type = "pixmap")
+#' plot(mypixmap)
+#' 
+#' @export
 
 
 MortonGlyph <- function(col, fill = FALSE, type = c("png","pixmap")){

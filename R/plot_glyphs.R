@@ -1,39 +1,40 @@
 library(grid)
 
-##' @title  Plot glyphs
-##' @description plot_glyphs plots a list of glyphs by basic plot or the plot in "grid" package
-##' @param x a numeric vector specifying x-location or a matrix whose first column specify x-location and second column specify y-location
-##' @param y a numeric vector specifying y-location, if x is a matrix, y is NULL.
-##' @param glyphs a list of glyphs which are data matrices in picture format or pixmaps
-##' @param glyphWidth width of each glyph
-##' @param glyphHeight height of each glyph
-##' @param just the justification of the rectangle relative to its (x, y) location
-##' @param type string specifying the format used to plot. "raster" means each glyph in the list is a data matrix in the png, jpeg or tiff format, and "pixmap" means it is a class of pixmap.
-##' "grid" means it will be ploted by the way in "grid" package. See \code{\link[graphics]{rasterImage}}, \code{\link[pixmap]{pixmap}}, \code{\link[grid]{grid.raster}}
-##' @param add logical value, indicate whether the plot is add on to the original plot or not
-##' @param ... Arguments passed to \code{plot} if \code{add=FALSE}
-##' @author Jiahua Liu
-##' @examples
-##' library(dplyr)
-##' # ozone
-##' data_ozone <- list()
-##' for(i in 1:(24*24)){
-##'   col_number <- (i-1) %% 24 + 1
-##'   row_number <- (i-1) %/% 24 + 1
-##'   data_ozone[[i]] <- as.vector(nasa$mets$ozone[col_number,row_number,,])
-##' }
-##' glyphs_ozone <- make_glyphs(data = data_ozone, width = c(1,12,1), height = c(1,1,6),
-##'                             glyph_type = "Keim", type = "pixmap")
-##' x <- getGridXY(length(glyphs_ozone))
-##' plot_glyphs(x, glyphs = glyphs_ozone, type = "pixmap")
-##' # rainbow color
-##' glyphs_rainbow <- make_glyphs(data = data_temperature[1:25], width = c(1,12,1), height = c(1,1,6), cols = rainbow(3),
-##'                               glyph_type = "Keim")
-##' x <- getGridXY(length(glyphs_rainbow))
-##' x[,1] <- x[,1]/ceiling(max(x[,1]))
-##' x[,2] <- x[,2]/ceiling(max(x[,2]))
-##' plot_glyphs(x, glyphs = glyphs_rainbow, type = "grid")
-
+#' @title  Plot glyphs
+#' @description plot_glyphs plots a list of glyphs by basic plot or the plot in "grid" package
+#' @param x a numeric vector specifying x-location or a matrix whose first column specify x-location and second column specify y-location
+#' @param y a numeric vector specifying y-location, if x is a matrix, y is NULL.
+#' @param glyphs a list of glyphs which are data matrices in picture format or pixmaps
+#' @param glyphWidth width of each glyph
+#' @param glyphHeight height of each glyph
+#' @param just the justification of the rectangle relative to its (x, y) location
+#' @param type string specifying the format used to plot. "raster" means each glyph in the list is a data matrix in the png, jpeg or tiff format, and "pixmap" means it is a class of pixmap.
+#' "grid" means it will be ploted by the way in "grid" package. See \code{\link[graphics]{rasterImage}}, \code{\link[pixmap]{pixmap}}, \code{\link[grid]{grid.raster}}
+#' @param add logical value, indicate whether the plot is add on to the original plot or not
+#' @param ... Arguments passed to \code{plot} if \code{add=FALSE}
+#' @author Jiahua Liu
+#' @examples
+#' library(dplyr)
+#' # ozone
+#' data_ozone <- list()
+#' for(i in 1:(24*24)){
+#'   col_number <- (i-1) %% 24 + 1
+#'   row_number <- (i-1) %/% 24 + 1
+#'   data_ozone[[i]] <- as.vector(nasa$mets$ozone[col_number,row_number,,])
+#' }
+#' glyphs_ozone <- make_glyphs(data = data_ozone, width = c(1,12,1), height = c(1,1,6),
+#'                             glyph_type = "Keim", type = "pixmap")
+#' x <- getGridXY(length(glyphs_ozone))
+#' plot_glyphs(x, glyphs = glyphs_ozone, type = "pixmap")
+#' # rainbow color
+#' glyphs_rainbow <- make_glyphs(data = data_temperature[1:25], width = c(1,12,1), height = c(1,1,6), cols = rainbow(3),
+#'                               glyph_type = "Keim")
+#' x <- getGridXY(length(glyphs_rainbow))
+#' x[,1] <- x[,1]/ceiling(max(x[,1]))
+#' x[,2] <- x[,2]/ceiling(max(x[,2]))
+#' plot_glyphs(x, glyphs = glyphs_rainbow, type = "grid")
+#' 
+#' @export
 
 plot_glyphs  <- function(x, y=NULL,  glyphs, glyphWidth, glyphHeight,
                          just = c("centre", "center",

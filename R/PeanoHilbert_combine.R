@@ -1,25 +1,25 @@
 library(png)
 library(pixmap)
 
-##' @title  Hilbert curve data visualization
-##' @description HilbertGlyph generates a data matrix of png format or a class of "pixmap" which can be used to display color strings in an order of Hilbert curve in the space given a vector of colors
-##' @param col vector of colors
-##' @param fill logical value indicating whether the color strings repeat from the beginning if number of colors in col is smaller than the total length of Hilbert curve
-##' @param type string specifying the format of output. "png" means the output is a data matrix in the png format, and "pixmap" means the output is a class of pixmap.
-##' @return a data matrix of png format or a class of "pixmap" that is used to plot. See \code{\link[pixmap]{pixmap}}, \code{\link[png]{writePNG}}, \code{\link[graphics]{rasterImage}}
-##' @author Jiahua Liu, Wayne Oldford
-##' @examples
-##' myPngmat <- HilbertGlyph()
-##' myPngmat <- HilbertGlyph(col = colors())
-##' myPngmat <- HilbertGlyph(col = colors(), fill = TRUE)
-##' writePNG(myPngmat, target = "myplot.png")
-##' plot(0,type='n', xlim=c(0,1), ylim=c(0,1), axes = FALSE,xlab = "", ylab = "")
-##' rasterImage(myPngmat, 0, 0, 1, 1)
-##' mypixmap <- HilbertGlyph(type = "pixmap")
-##' mypixmap <- HilbertGlyph(col = colors(), fill = TRUE, type = "pixmap")
-##' plot(mypixmap)
-
-
+#' @title  Hilbert curve data visualization
+#' @description HilbertGlyph generates a data matrix of png format or a class of "pixmap" which can be used to display color strings in an order of Hilbert curve in the space given a vector of colors
+#' @param col vector of colors
+#' @param fill logical value indicating whether the color strings repeat from the beginning if number of colors in col is smaller than the total length of Hilbert curve
+#' @param type string specifying the format of output. "png" means the output is a data matrix in the png format, and "pixmap" means the output is a class of pixmap.
+#' @return a data matrix of png format or a class of "pixmap" that is used to plot. See \code{\link[pixmap]{pixmap}}, \code{\link[png]{writePNG}}, \code{\link[graphics]{rasterImage}}
+#' @author Jiahua Liu, Wayne Oldford
+#' @examples
+#' myPngmat <- HilbertGlyph()
+#' myPngmat <- HilbertGlyph(col = colors())
+#' myPngmat <- HilbertGlyph(col = colors(), fill = TRUE)
+#' writePNG(myPngmat, target = "myplot.png")
+#' plot(0,type='n', xlim=c(0,1), ylim=c(0,1), axes = FALSE,xlab = "", ylab = "")
+#' rasterImage(myPngmat, 0, 0, 1, 1)
+#' mypixmap <- HilbertGlyph(type = "pixmap")
+#' mypixmap <- HilbertGlyph(col = colors(), fill = TRUE, type = "pixmap")
+#' plot(mypixmap)
+#' 
+#' @export
 
 HilbertGlyph <- function(col, fill = FALSE, type = c("png","pixmap")){
   oldw <- getOption("warn")

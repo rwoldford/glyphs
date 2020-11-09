@@ -1,14 +1,15 @@
-##' @title  Get x and y coordinates in a grid
-##' @description getGridXY generates a matrix of x and y coordinates in a grid. The justification of each coordinate is in center.
-##' @param n number of coordinates to generate
-##' @param nrows number of rows in the grid
-##' @param ncols number of columns in the grid
-##' @param byrow logical value indicating whether the order of coordinates in the grid is byrow or not
-##' @return a matrix which gives the x and y coordinates of a grid
-##' @author Jiahua Liu
-##' @examples
-##' x <- getGridXY(16)
-##' x
+#' @title  Get x and y coordinates in a grid
+#' @description getGridXY generates a matrix of x and y coordinates in a grid. The justification of each coordinate is in center.
+#' @param n number of coordinates to generate
+#' @param nrows number of rows in the grid
+#' @param ncols number of columns in the grid
+#' @param byrow logical value indicating whether the order of coordinates in the grid is byrow or not
+#' @return a matrix which gives the x and y coordinates of a grid
+#' @author Jiahua Liu
+#' @examples
+#' x <- getGridXY(16)
+#' x
+#' @export
 
 getGridXY <- function(n, nrows, ncols = NULL, byrow =TRUE ) {
   Grid_matrix <- matrix(nrow = n, ncol = 2)

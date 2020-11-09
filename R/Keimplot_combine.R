@@ -1,27 +1,28 @@
 library(png)
 library(pixmap)
 
-##' @title  Keim's recursive pattern algorithm data visualization
-##' @description recGlyph generates a data matrix of png format or a class of "pixmap" to display color strings in an order of recursive pattern provided by Keim in the space given a vector of colors
-##' @param col vector of colors
-##' @param width vector of width in each level of algorithm
-##' @param height vector of height in each level of algorithm
-##' @param fill logical value indicating whether the color strings repeat from the beginning if number of colors in col is smaller than the total number of colors to display
-##' @param type string specifying the format of output. "png" means the output is a data matrix in the png format, and "pixmap" means the output is a class of pixmap.
-##' @return a data matrix of png format or a class of "pixmap" that is used to plot. See \code{\link[pixmap]{pixmap}}, \code{\link[png]{writePNG}}, \code{\link[graphics]{rasterImage}}
-##' @author Jiahua Liu, Wayne Oldford
-##' @references Keim, Daniel A. 1996. "Pixel-Oriented Visualization Techniques for Exploring Very Large Data Bases." \emph{Journal of Computational and Graphical Statistics} 5 (1). Taylor & Francis: 58-77.
-##' @examples
-##' width=c(1,6,1,12,1)
-##' height=c(1,1,4,1,3)
-##' myPngmat <- recGlyph(width=width, height=height)
-##' myPngmat <- recGlyph(width=width, height=height, col = colors(), fill = TRUE)
-##' writePNG(myPngmat, target = "myplot.png")
-##' plot(0,type='n', xlim=c(0,1), ylim=c(0,1), axes = FALSE,xlab = "", ylab = "")
-##' rasterImage(myPngmat,0,0,1,1)
-##' myPixmap <- recGlyph(width=width, height=height, col = colors(), type = "pixmap")
-##' plot(myPixmap)
-
+#' @title  Keim's recursive pattern algorithm data visualization
+#' @description recGlyph generates a data matrix of png format or a class of "pixmap" to display color strings in an order of recursive pattern provided by Keim in the space given a vector of colors
+#' @param col vector of colors
+#' @param width vector of width in each level of algorithm
+#' @param height vector of height in each level of algorithm
+#' @param fill logical value indicating whether the color strings repeat from the beginning if number of colors in col is smaller than the total number of colors to display
+#' @param type string specifying the format of output. "png" means the output is a data matrix in the png format, and "pixmap" means the output is a class of pixmap.
+#' @return a data matrix of png format or a class of "pixmap" that is used to plot. See \code{\link[pixmap]{pixmap}}, \code{\link[png]{writePNG}}, \code{\link[graphics]{rasterImage}}
+#' @author Jiahua Liu, Wayne Oldford
+#' @references Keim, Daniel A. 1996. "Pixel-Oriented Visualization Techniques for Exploring Very Large Data Bases." \emph{Journal of Computational and Graphical Statistics} 5 (1). Taylor & Francis: 58-77.
+#' @examples
+#' width=c(1,6,1,12,1)
+#' height=c(1,1,4,1,3)
+#' myPngmat <- recGlyph(width=width, height=height)
+#' myPngmat <- recGlyph(width=width, height=height, col = colors(), fill = TRUE)
+#' writePNG(myPngmat, target = "myplot.png")
+#' plot(0,type='n', xlim=c(0,1), ylim=c(0,1), axes = FALSE,xlab = "", ylab = "")
+#' rasterImage(myPngmat,0,0,1,1)
+#' myPixmap <- recGlyph(width=width, height=height, col = colors(), type = "pixmap")
+#' plot(myPixmap)
+#' 
+#' @export
 
 
 recGlyph <- function(col, width, height, fill = FALSE, type = c("png","pixmap")){
