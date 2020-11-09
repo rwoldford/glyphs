@@ -4,10 +4,20 @@
 \alias{data2col}
 \title{Data to color mapping}
 \usage{
-data2col(data, cols = NULL, hueRange = c(0, 360), intensityRange = c(0.4,
-  1), alpha = 1, numCols = 1e+05, maxColorValue = 255, xLow = min(data,
-  na.rm = TRUE), origin = NULL, xHigh = max(data, na.rm = TRUE),
-  missingCol = NULL, outRangeCol = NULL)
+data2col(
+  data,
+  cols = NULL,
+  hueRange = c(0, 360),
+  intensityRange = c(0.4, 1),
+  alpha = 1,
+  numCols = 1e+05,
+  maxColorValue = 255,
+  xLow = min(data, na.rm = TRUE),
+  origin = NULL,
+  xHigh = max(data, na.rm = TRUE),
+  missingCol = NULL,
+  outRangeCol = NULL
+)
 }
 \arguments{
 \item{data}{vector of data values}

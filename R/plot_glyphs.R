@@ -186,61 +186,61 @@ plot_glyphs  <- function(x, y=NULL,  glyphs, glyphWidth, glyphHeight,
            switch(just,
                   centre = {
                     plot <- Map(function(Glyphs_i,x_i, y_i){
-                      addlogo(Glyphs_i, px=c(x_i - glyphWidth/2, x_i + glyphWidth/2),
+                      pixmap::addlogo(Glyphs_i, px=c(x_i - glyphWidth/2, x_i + glyphWidth/2),
                               py=c(y_i - glyphHeight/2, y_i + glyphHeight/2))
                     },glyphs, x, y)
                   },
                   center = {
                     plot <- Map(function(Glyphs_i,x_i, y_i){
-                      addlogo(Glyphs_i, px=c(x_i - glyphWidth/2, x_i + glyphWidth/2),
+                      pixmap::addlogo(Glyphs_i, px=c(x_i - glyphWidth/2, x_i + glyphWidth/2),
                               py=c(y_i - glyphHeight/2, y_i + glyphHeight/2))
                     },glyphs, x, y)
                   },
                   top = {
                     plot <- Map(function(Glyphs_i,x_i, y_i){
-                      addlogo(Glyphs_i, px=c(x_i - glyphWidth/2, x_i + glyphWidth/2),
+                      pixmap::addlogo(Glyphs_i, px=c(x_i - glyphWidth/2, x_i + glyphWidth/2),
                               py=c(y_i - glyphHeight, y_i))
                     },glyphs, x, y)
                   },
                   bottom = {
                     plot <- Map(function(Glyphs_i,x_i, y_i){
-                      addlogo(Glyphs_i, px=c(x_i - glyphWidth/2, x_i + glyphWidth/2),
+                      pixmap::addlogo(Glyphs_i, px=c(x_i - glyphWidth/2, x_i + glyphWidth/2),
                               py=c(y_i, y_i + glyphHeight))
                     },glyphs, x, y)
                   },
                   left = {
                     plot <- Map(function(Glyphs_i,x_i, y_i){
-                      addlogo(Glyphs_i, px=c(x_i, x_i + glyphWidth),
+                      pixmap::addlogo(Glyphs_i, px=c(x_i, x_i + glyphWidth),
                               py=c(y_i - glyphHeight/2, y_i + glyphHeight/2))
                     },glyphs, x, y)
                   },
                   right = {
                     plot <- Map(function(Glyphs_i,x_i, y_i){
-                      addlogo(Glyphs_i, px=c(x_i - glyphWidth, x_i),
+                      pixmap::addlogo(Glyphs_i, px=c(x_i - glyphWidth, x_i),
                               py=c(y_i - glyphHeight/2, y_i + glyphHeight/2))
                     },glyphs, x, y)
                   },
                   bottomleft = {
                     plot <- Map(function(Glyphs_i,x_i, y_i){
-                      addlogo(Glyphs_i, px=c(x_i, x_i + glyphWidth),
+                      pixmap::addlogo(Glyphs_i, px=c(x_i, x_i + glyphWidth),
                               py=c(y_i, y_i + glyphHeight))
                     },glyphs, x, y)
                   },
                   topright = {
                     plot <- Map(function(Glyphs_i,x_i, y_i){
-                      addlogo(Glyphs_i, px=c(x_i - glyphWidth, x_i),
+                      pixmap::addlogo(Glyphs_i, px=c(x_i - glyphWidth, x_i),
                               py=c(y_i - glyphHeight, y_i))
                     },glyphs, x, y)
                   },
                   bottomright = {
                     plot <- Map(function(Glyphs_i,x_i, y_i){
-                      addlogo(Glyphs_i, px=c(x_i - glyphWidth, x_i),
+                      pixmap::addlogo(Glyphs_i, px=c(x_i - glyphWidth, x_i),
                               py=c(y_i, y_i + glyphHeight))
                     },glyphs, x, y)
                   },
                   topleft = {
                     plot <- Map(function(Glyphs_i,x_i, y_i){
-                      addlogo(Glyphs_i, px=c(x_i, x_i + glyphWidth),
+                      pixmap::addlogo(Glyphs_i, px=c(x_i, x_i + glyphWidth),
                               py=c(y_i - glyphHeight, y_i))
                     },glyphs, x, y)
                   })

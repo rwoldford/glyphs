@@ -29,6 +29,7 @@ rasterImage(myPngmat,0,0,1,1)
 mypixmap <- MortonGlyph(type = "pixmap")
 mypixmap <- MortonGlyph(col = colors(), fill = TRUE, type = "pixmap")
 plot(mypixmap)
+
 }
 \author{
 Jiahua Liu, Wayne Oldford

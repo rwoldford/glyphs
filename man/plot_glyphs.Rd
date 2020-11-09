@@ -4,10 +4,22 @@
 \alias{plot_glyphs}
 \title{Plot glyphs}
 \usage{
-plot_glyphs(x, y = NULL, glyphs, glyphWidth, glyphHeight, just = c("centre",
-  "center", "top", "bottom", "left", "right", "bottomleft", "topright",
-  "bottomright", "topleft"), type = c("raster", "pixmap", "grid"),
-  add = FALSE, xlab = "x", ylab = "y", ...)
+plot_glyphs(
+  x,
+  y = NULL,
+  glyphs,
+  glyphWidth,
+  glyphHeight,
+  just = c("centre", "center", "top", "bottom", "left", "right", "bottomleft",
+    "topright", "bottomright", "topleft"),
+  type = c("raster", "pixmap", "grid"),
+  add = FALSE,
+  xlab = "x",
+  ylab = "y",
+  xlim = NULL,
+  ylim = NULL,
+  ...
+)
 }
 \arguments{
 \item{x}{a numeric vector specifying x-location or a matrix whose first column specify x-location and second column specify y-location}
@@ -52,6 +64,7 @@ x <- getGridXY(length(glyphs_rainbow))
 x[,1] <- x[,1]/ceiling(max(x[,1]))
 x[,2] <- x[,2]/ceiling(max(x[,2]))
 plot_glyphs(x, glyphs = glyphs_rainbow, type = "grid")
+
 }
 \author{
 Jiahua Liu

@@ -4,8 +4,15 @@
 \alias{make_glyphs_draw}
 \title{Make glyphs in different classes}
 \usage{
-make_glyphs_draw(data, draw_fun, type = c("png", "jpeg", "pixmap", "tiff"),
-  width = 50, height = 50, mar = rep(1, 4), ...)
+make_glyphs_draw(
+  data,
+  draw_fun,
+  type = c("png", "jpeg", "pixmap", "tiff"),
+  width = 50,
+  height = 50,
+  mar = rep(1, 4),
+  ...
+)
 }
 \arguments{
 \item{data}{a list of data vectors}
@@ -37,6 +44,8 @@ for (i in 1:n){
 glyphs <- make_glyphs_draw(data, hist, type = "jpeg", mar = rep(4, 4), width = 200, height = 200)
 x <- getGridXY(n)
 plot_glyphs(x, glyphs = glyphs, glyphWidth = 0.8, glyphHeight = 0.6, axes = FALSE, xlab = "", ylab = "")
+
+
 }
 \author{
 Wayne Oldford, Jiahua Liu

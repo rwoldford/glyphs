@@ -4,20 +4,36 @@
 \alias{make_glyphs}
 \title{Make glyphs}
 \usage{
-make_glyphs(data, glyph_type = c("Hilbert", "Morton", "Keim"), width, height,
-  cols = NULL, hueRange = c(0, 360), intensityRange = c(0.4, 1),
-  alpha = 1, numCols = 1e+05, maxColorValue = 255, xLow = NULL,
-  origin = NULL, xHigh = NULL, missingCol = NULL, outRangeCol = NULL,
-  data2colfn, type = c("png", "pixmap"), byrow = TRUE, ...)
+make_glyphs(
+  data,
+  glyph_type = c("Hilbert", "Morton", "rectangle"),
+  width,
+  height,
+  cols = NULL,
+  hueRange = c(0, 360),
+  intensityRange = c(0.4, 1),
+  alpha = 1,
+  numCols = 1e+05,
+  maxColorValue = 255,
+  xLow = NULL,
+  origin = NULL,
+  xHigh = NULL,
+  missingCol = NULL,
+  outRangeCol = NULL,
+  data2colfn,
+  type = c("png", "pixmap"),
+  byrow = TRUE,
+  ...
+)
 }
 \arguments{
 \item{data}{a data frame, matrix, where each row or column is for an individual, it can also be a list of data vectors for each individual}
 
-\item{glyph_type}{if "Hilbert"(Default) colors in each glyph is placed in the order of Hilbert curve, if "Morton", it is in Morton curve, and if "Keim" it is the method provided by Keim.}
+\item{glyph_type}{if "Hilbert"(Default) colors in each glyph is placed in the order of Hilbert curve, if "Morton", it is in Morton curve, and if "rectangle" it is the recursive rectangular method provided by Keim.}
 
-\item{width}{vector of width in each level of algorithm provided by Keim, must be given if glyph_type is "Keim"}
+\item{width}{vector of width in each level of algorithm provided by Keim, must be given if glyph_type is "rectangle"}
 
-\item{height}{vector of height in each level of algorithm provided by Keim if glyph_typbe is "Keim"}
+\item{height}{vector of height in each level of algorithm provided by Keim if glyph_typbe is "rectangle"}
 
 \item{cols}{a vector of rgb colours or NULL (default).  If NULL, cols is constructed from hueRange, intensityRange, alpha, numCols, and maxColorValue.}
 
@@ -75,7 +91,7 @@ Glyphs <- make_glyphs(data[1:24]) # list of glyphs in the png format
 Glyphs <- make_glyphs(data_c[1:24], glyph_type = "Morton")
 width=c(1,6,1,12,1)
 height=c(1,1,4,1,3)
-Glyphs <- make_glyphs(data_c[1:24], width = width, height = height, glyph_type = "Keim", alpha = 0.7)
+Glyphs <- make_glyphs(data_c[1:24], width = width, height = height, glyph_type = "rectangle", alpha = 0.7)
 Glyphs_pixmap <- make_glyphs(data_c[1:24], glyph_type = "Morton", type = "pixmap", intensityRange = c(1,0.4))
 
 # list of png format plot
@@ -95,6 +111,7 @@ plot(0,type='n', xlim=c(0, sideLength), ylim=c(0,sideLength),axes = FALSE,xlab =
 plot <- Map(function(Glyphs_i,i){
   addlogo(Glyphs_i, px=c((i-1)\%\%sideLength, (i-1)\%\%sideLength+glyph_x), py=c(sideLength-1-(i-1)\%/\%sideLength, sideLength-(1-glyph_y)-(i-1)\%/\%sideLength))
 },Glyphs_pixmap, 1:length(Glyphs_pixmap))
+
 }
 \author{
 Jiahua Liu, Wayne Oldford

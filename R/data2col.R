@@ -33,18 +33,18 @@ data2col <- function(data,
                      outRangeCol = NULL){
   if (!is.numeric(alpha) | alpha > 1 | alpha < 0)  stop("alpha must be between 0 and 1")
   if (is.null(missingCol)) {
-      missingCol <- adjustcolor(rgb(t(col2rgb("yellow")),
-                                    maxColorValue = 255, alpha=255),
-                                alpha.f = alpha)
+    missingCol <- grDevices::adjustcolor(grDevices::rgb(t(grDevices::col2rgb("yellow")),
+                                             maxColorValue = 255, alpha=255),
+                                         alpha.f = alpha)
   }
   if (is.null(outRangeCol)) {
-    outRangeCol <- c(adjustcolor(rgb(t(col2rgb("blue")),
-                                  maxColorValue = 255, alpha=255),
-                              alpha.f = alpha),
-                    adjustcolor(rgb(t(col2rgb("red")),
-                                    maxColorValue = 255, alpha=255),
-                                alpha.f = alpha)
-                    )
+    outRangeCol <- c(grDevices::adjustcolor(grDevices::rgb(t(grDevices::col2rgb("blue")),
+                                                maxColorValue = 255, alpha=255),
+                                            alpha.f = alpha),
+                     grDevices::adjustcolor(grDevices::rgb(t(grDevices::col2rgb("red")),
+                                                maxColorValue = 255, alpha=255),
+                                            alpha.f = alpha)
+    )
   } else {
     if (length(outRangeCol) <= 1){
       outRangeCol <- rep(outRangeCol,2)
@@ -54,7 +54,7 @@ data2col <- function(data,
   }
   low_col <- outRangeCol[1]
   high_col <- outRangeCol[2]
-
+  
   missing_loc <- which(is.na(data))
   if (length(missing_loc) == 0) {
     dataNoMissing <- data
@@ -72,7 +72,7 @@ data2col <- function(data,
         dataNoMissing <- rep(if (dataNoMissing < xLow) -1 else {
           if (dataNoMissing > xHigh) 2  else 0.5},
           length(dataNoMissing)
-          )
+        )
         xLow <- 0
         xHigh <- 1
       }
@@ -105,13 +105,13 @@ data2col <- function(data,
         I <- interpolator(H)
         S <- rep(1, length(H))
         rgbVals <- hsi2rgb(H, S, I, maxColorValue = maxColorValue)
-        cols <- rgb(t(rgbVals), maxColorValue = maxColorValue, alpha = alpha*maxColorValue)
+        cols <- grDevices::rgb(t(rgbVals), maxColorValue = maxColorValue, alpha = alpha*maxColorValue)
       } else {numCols <- length(cols)}
-
+      
       pixelCols <- character(length(data))
-
+      
       dataNoMissing_inRange[which(dataNoMissing_inRange == 0)] <- 1/numCols
-
+      
       if (length(missing_loc)==0) {
         if (length(inRange_loc) != 0){
           pixelCols[inRange_loc] <- cols[ceiling(dataNoMissing_inRange*numCols)]

@@ -40,6 +40,7 @@ col2=grey(gr1)
 par(mfrow=c(2,1))
 barplot(rep(1,length(H)),col = col1,border = NA,beside = FALSE,space = c(0,0),main="HSI color mapping")
 barplot(rep(1,length(H)),col = col2,border = NA,beside = FALSE,space = c(0,0))
+
 }
 \references{
 Keim, Daniel A, and Hans-Peter Kriegel. 1995. "Issues in Visualizing Large Databases." In \emph{Visual Database Systems} 3, 203-14. Springer.

@@ -62,10 +62,10 @@ make_glyphs_draw <- function (data, draw_fun,
 
   switch(
     type,
-    png =   lapply(files, function(f) readPNG(f)),
+    png =   lapply(files, function(f) png::readPNG(f)),
     #bmp =   lapply(files, function(f) read.bmp(f)), # read.bmp fails
-    tiff =  lapply(files, function(f) readTIFF(f)),
-    pixmap = lapply(files, function(f) readTiff(f)),  # Returns a pixmapRGB
-    jpeg =  lapply(files, function(f) readJPEG(f))
+    tiff =  lapply(files, function(f) tiff::readTIFF(f)),
+    pixmap = lapply(files, function(f) tiff::readTIFF(f)),  # Returns a pixmapRGB
+    jpeg =  lapply(files, function(f) jpeg::readJPEG(f))
   )
 }
